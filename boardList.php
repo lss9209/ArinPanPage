@@ -1,7 +1,35 @@
 <?php
   $conn = mysqli_connect("localhost","root","11111111");
   mysqli_select_db($conn,"board");
-  $result = mysqli_query($conn, "SELECT * FROM board");
+  $data = mysqli_query($conn,"SELECT id FROM board ORDER BY id DESC");
+  $num = mysqli_num_rows($data);
+  if(empty($_GET['page'])==true) {
+    $page = 1;
+  }
+  else {
+    $page = $_GET['page'];
+  }
+  $list = 5;
+  $block = 3;
+
+  $pageNum = ceil($num/$list); // 총 페이지
+  $blockNum = ceil($pageNum/$block); // 총 블록
+  $nowBlock = ceil($page/$block);
+
+  if($num != 0 && $page > $pageNum) {
+    header('Location: /boardList.php?page='.$pageNum);
+  }
+
+  $s_page = ($nowBlock * $block) - 2;
+  if ($s_page <= 1) {
+      $s_page = 1;
+  }
+  $e_page = $nowBlock*$block;
+  if ($pageNum <= $e_page) {
+      $e_page = $pageNum;
+  }
+  $s_point = ($page-1) * $list;
+  $result = mysqli_query($conn, "SELECT * FROM board ORDER BY id DESC LIMIT $s_point,$list");
  ?>
 <!DOCTYPE>
 <head>
@@ -42,9 +70,20 @@
                 <td><a href='/boardContent.php?id=".$row['id']."' style='color:blue'>".$row['title']."</a></td>
                 </tr>";
               }
-             ?>
+              ?>
         </tbody>
       </table>
+        <?php
+        for ($p=$s_page; $p<=$e_page; $p++) {
+       ?>
+       <a href="/boardList.php?page=<?=$p?>"><?=$p?></a>
+       <?php
+        }
+      ?>
+      <div>
+        <a href="/boardList.php?page=<?=$s_page-1?>">이전</a>
+        <a href="/boardList.php?page=<?=$e_page+1?>">다음</a>
+      </div>
     </div>
     <button type="button" class="btn btn-primary btn-lg" onclick="document.getElementById('body').className='white'">white</button>
     <button type="button" class="btn btn-primary btn-lg" onclick="document.getElementById('body').className='black'">black</button>

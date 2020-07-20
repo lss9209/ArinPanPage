@@ -28,7 +28,7 @@
       </p>
       <div class="wrtieTool" id="bContent">글 내용:</div>
       <div><textarea name="content" cols="40" rows="10"></textarea></div>
-      <input type="submit"></button>
+      <input type="submit" value="작성완료"></button>
     </form>
   </article>
 </div>
