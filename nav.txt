@@ -1,0 +1,5 @@
+<ul>
+  <li><a href="/index.php?id=1">아린 프로필</a></li>
+  <li><a href="/index.php?id=2">오마이걸 타이틀곡 목록</a></li>
+  <li><a href="/boardList.php">자유게시판</a></li>
+</ul>

@@ -1,0 +1,11 @@
+<div id="profile">
+  <h1> 아린 소개 </h1>
+  <img src="/img/ArinPicture2.png" alt="아린사진2">
+  <p>
+    본명: 최예원 <br>
+    나이: 22살 <br>
+    소속그룹: 오마이걸 <br>
+    취미: 네일아트 <br>
+    반려견: 아리
+  </p>
+</div>
