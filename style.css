@@ -23,9 +23,9 @@ header h1 {
 header img {
 
 }
-nav {
-  border-right: 1px solid;
-  height:900px;
+article {
+  border-left: 1px solid;
+  height:510px;
 }
 #articlep1 {
   float:left;

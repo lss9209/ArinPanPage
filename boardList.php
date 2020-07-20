@@ -76,13 +76,13 @@
         <?php
         for ($p=$s_page; $p<=$e_page; $p++) {
        ?>
-       <a href="/boardList.php?page=<?=$p?>"><?=$p?></a>
+       <a href="/boardList.php?page=<?=$p?>" style="color:blue"><?=$p?></a>
        <?php
         }
       ?>
       <div>
-        <a href="/boardList.php?page=<?=$s_page-1?>">이전</a>
-        <a href="/boardList.php?page=<?=$e_page+1?>">다음</a>
+        <a href="/boardList.php?page=<?=$s_page-1?>" style="color:blue">이전</a>
+        <a href="/boardList.php?page=<?=$e_page+1?>" style="color:blue">다음</a>
       </div>
     </div>
     <button type="button" class="btn btn-primary btn-lg" onclick="document.getElementById('body').className='white'">white</button>
