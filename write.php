@@ -32,8 +32,10 @@
         <input type="submit" value="작성완료"></button>
       </form>
   </div>
+  <div>
     <button type="button" class="btn btn-primary btn-lg" onclick="document.getElementById('body').className='white'">white</button>
     <button type="button" class="btn btn-primary btn-lg" onclick="document.getElementById('body').className='black'">black</button
+  </div>
   </article>
 </div>
 </body>
