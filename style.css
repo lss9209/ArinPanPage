@@ -58,3 +58,6 @@ article a {
  .bContentp {
    border-bottom: 1px solid;
  }
+ #writep {
+   float:left;
+ }
